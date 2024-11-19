@@ -1,0 +1,27 @@
+CREATE EXTERNAL TABLE air_quality (
+  key INT, -- Row key
+  city STRING,
+  date STRING,
+  pm25 FLOAT,
+  pm10 FLOAT,
+  no FLOAT,
+  no2 FLOAT,
+  nox FLOAT,
+  nh3 FLOAT,
+  co FLOAT,
+  so2 FLOAT,
+  o3 FLOAT,
+  benzene FLOAT,
+  toluene FLOAT,
+  xylene FLOAT,
+  aqi INT,
+  aqi_bucket STRING
+)
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES (
+  "hbase.columns.mapping" = ":key,info:City,info:Date,pollutants:PM2.5,pollutants:PM10,pollutants:NO,pollutants:NO2,pollutants:NOx,pollutants:NH3,pollutants:CO,pollutants:SO2,pollutants:O3,pollutants:Benzene,pollutants:Toluene,pollutants:Xylene,pollutants:AQI,aqi_category:AQI_Bucket"
+)
+TBLPROPERTIES (
+  "hbase.table.name" = "air_quality",
+  "hbase.mapred.output.outputtable" = "air_quality"
+);
