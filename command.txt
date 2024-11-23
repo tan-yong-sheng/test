@@ -8,5 +8,7 @@ scan 'air_quality',
      SingleColumnValueFilter('info', 'City', =, 'substring:Hyderabad') OR \
      SingleColumnValueFilter('info', 'City', =, 'substring:Pune') OR \
      SingleColumnValueFilter('info', 'City', =, 'substring:Ahmedabad') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Surat')"
+     SingleColumnValueFilter('info', 'City', =, 'substring:Surat') AND \
+     SingleColumnValueFilter('info', 'Date', =, 'binary:2020-07-01')"
   }
+
