@@ -1,14 +1,9 @@
-scan 'air_quality',
-  { FILTER =>
-    "SingleColumnValueFilter('info', 'City', =, 'substring:Delhi') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Mumbai') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Chennai') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Kolkata') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Bengaluru') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Hyderabad') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Pune') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Ahmedabad') OR \
-     SingleColumnValueFilter('info', 'City', =, 'substring:Surat') AND \
-     SingleColumnValueFilter('info', 'Date', =, 'binary:2020-07-01')"
-  }
-
+put 'air_quality', 'Ahmedabad_20150101', 'info:Date', '2015-01-01'
+put 'air_quality', 'Ahmedabad_20150101', 'pollutants:NO', '0.92'
+put 'air_quality', 'Ahmedabad_20150101', 'pollutants:NO2', '18.22'
+put 'air_quality', 'Ahmedabad_20150101', 'pollutants:NOx', '17.15'
+put 'air_quality', 'Ahmedabad_20150101', 'pollutants:CO', '0.92'
+put 'air_quality', 'Ahmedabad_20150101', 'pollutants:SO2', '27.64'
+put 'air_quality', 'Ahmedabad_20150101', 'pollutants:O3', '133.36'
+put 'air_quality', 'Ahmedabad_20150101', 'pollutants:Benzene', '0'
+put 'air_quality', 'Ahmedabad_20150101', 'pollutants:Toluene', '0.02'
