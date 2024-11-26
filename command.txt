@@ -16,3 +16,5 @@ put 'air_quality', 'Delhi_20191017', 'pollutants:Toluene', '30.79'
 put 'air_quality', 'Delhi_20191017', 'pollutants:Xylene', '2.36'
 put 'air_quality', 'Delhi_20191017', 'aqi_category:AQI', '300'
 put 'air_quality', 'Delhi_20191017', 'aqi_category:AQI_Bucket', 'Poor'
+
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns="HBASE_ROW_KEY,info:City,info:Date,pollutants:PM2.5,pollutants:PM10,pollutants:NO,pollutants:NO2,pollutants:NOx,pollutants:NH3,pollutants:CO,pollutants:SO2,pollutants:O3,pollutants:Benzene,pollutants:Toluene,pollutants:Xylene,aqi_category:AQI,aqi_category:AQI_Bucket" air_quality /hbase/city_day.csv
