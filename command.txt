@@ -19,6 +19,6 @@ put 'air_quality', 'Delhi_20191017', 'aqi_category:AQI_Bucket', 'Poor'
 
 hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns="HBASE_ROW_KEY,info:City,info:Date,pollutants:PM2.5,pollutants:PM10,pollutants:NO,pollutants:NO2,pollutants:NOx,pollutants:NH3,pollutants:CO,pollutants:SO2,pollutants:O3,pollutants:Benzene,pollutants:Toluene,pollutants:Xylene,aqi_category:AQI,aqi_category:AQI_Bucket" air_quality /hbase/city_day.csv
 
-scan 'air_quality', { COLUMN => ['info:City','aqi_category:AQI',’’aqi_category:AQI_Bucket’], FILTER => "SingleColumnValueFilter('info', 'City', =, 'substring:Delhi')", STARTROW=>'Delhi_20191014', STOPROW=>'Delhi_20191020'}
+scan 'air_quality', { COLUMN => ['info:City','aqi_category:AQI','aqi_category:AQI_Bucket'], FILTER => "SingleColumnValueFilter('info', 'City', =, 'substring:Delhi')", STARTROW=>'Delhi_20191014', STOPROW=>'Delhi_20191020'}
 
-scan 'air_quality', { COLUMN => ['info:City','aqi_category:AQI',’’aqi_category:AQI_Bucket’], FILTER => "SingleColumnValueFilter('info', 'City', =, 'substring:Delhi')", STARTROW=>'Delhi_20200405', STOPROW=>'Delhi_20200411'}
+scan 'air_quality', { COLUMN => ['info:City','aqi_category:AQI','aqi_category:AQI_Bucket'], FILTER => "SingleColumnValueFilter('info', 'City', =, 'substring:Delhi')", STARTROW=>'Delhi_20200405', STOPROW=>'Delhi_20200411'}
