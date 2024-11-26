@@ -1,3 +1,6 @@
+sudo service hbase-master start
+sudo service hbase-regionserver start 
+
 put 'air_quality', 'Delhi_20191017', 'info:Date', '20150101'
 put 'air_quality', 'Delhi_20191017', 'pollutants:PM2.5', '121.68' 
 put 'air_quality', 'Delhi_20191017', 'pollutants:PM10', '245.2'
