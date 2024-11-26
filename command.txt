@@ -22,3 +22,12 @@ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dim
 scan 'air_quality', { COLUMN => ['info:City','aqi_category:AQI','aqi_category:AQI_Bucket'], FILTER => "SingleColumnValueFilter('info', 'City', =, 'substring:Delhi')", STARTROW=>'Delhi_20191014', STOPROW=>'Delhi_20191020'}
 
 scan 'air_quality', { COLUMN => ['info:City','aqi_category:AQI','aqi_category:AQI_Bucket'], FILTER => "SingleColumnValueFilter('info', 'City', =, 'substring:Delhi')", STARTROW=>'Delhi_20200405', STOPROW=>'Delhi_20200411'}
+
+
+scan 'air_quality', {COLUMN => ['info:City', 'info:Date', 'aqi_category:AQI_Bucket'], FILTER => "SingleColumnValueFilter('aqi_category', 'AQI_Bucket', =, 'substring:Good') AND SingleColumnValueFilter('info', 'Date', =, 'binary:20200408')"}
+
+scan 'air_quality', {COLUMN => ['info:City', 'info:Date', 'aqi_category:AQI_Bucket'], FILTER => "SingleColumnValueFilter('aqi_category', 'AQI_Bucket', =, 'substring:Satisfactory') AND SingleColumnValueFilter('info', 'Date', =, 'binary:20200408')"}
+
+scan 'air_quality', {COLUMN => ['info:City', 'info:Date', 'aqi_category:AQI_Bucket'], FILTER => "SingleColumnValueFilter('aqi_category', 'AQI_Bucket', =, 'substring:Moderate') AND SingleColumnValueFilter('info', 'Date', =, 'binary:20200408')"}
+
+scan 'air_quality', {COLUMN => ['info:City', 'info:Date', 'aqi_category:AQI_Bucket'], FILTER => "SingleColumnValueFilter('aqi_category', 'AQI_Bucket', =, 'substring:Poor') AND SingleColumnValueFilter('info', 'Date', =, 'binary:20200408')"}
